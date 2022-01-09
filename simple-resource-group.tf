@@ -12,8 +12,7 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "simple-resource-group" {
-  count    = length(var.resource_group_names)
-  name     = "simple-resource-group-${var.environment_name}-${var.resource_group_names[count.index]}"
-  location = "eastus"
+resource "azurerm_resource_group" "simple_resource_group" {
+  name     = "simple-resource-group-${var.environment_name}-${var.resource_group_names[0]}"
+  location = "eastus2"
 }
